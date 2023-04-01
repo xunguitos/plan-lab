@@ -17,6 +17,7 @@ public class PetitionsController {
 	@Autowired
 	private IPetitionsService petitionsService;
 	
+	
 	public ResponseEntity<List<PetitionsDto>> getAllPetitions(){
 		return ResponseEntity.ok().body(petitionsService.findAllPetitions());
 	}
