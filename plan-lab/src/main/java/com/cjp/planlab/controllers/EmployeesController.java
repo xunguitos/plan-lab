@@ -21,7 +21,6 @@ import com.cjp.planlab.services.IEmployeesService;
 @RestController
 @RequestMapping("/employees")
 public class EmployeesController {
-
 	@Autowired
 	private IEmployeesService employeesService;
 	
