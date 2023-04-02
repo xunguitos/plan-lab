@@ -13,7 +13,7 @@ public class PetitionsDto {
 	
 	private String message;
 	
-	private List<Date> days;
+	private List<String> days;
 	
 	private EmployeesDto employee;
 
@@ -41,11 +41,11 @@ public class PetitionsDto {
 		this.message = message;
 	}
 
-	public List<Date> getDays() {
+	public List<String> getDays() {
 		return days;
 	}
 
-	public void setDays(List<Date> days) {
+	public void setDays(List<String> days) {
 		this.days = days;
 	}
 
