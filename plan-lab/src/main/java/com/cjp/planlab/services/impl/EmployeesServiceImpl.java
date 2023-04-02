@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import com.cjp.planlab.dtos.EmployeesDto;
+import com.cjp.planlab.mapper.EmployeesMapper;
 import com.cjp.planlab.repository.EmployeesRepository;
 import com.cjp.planlab.services.IEmployeesService;
 
@@ -16,7 +17,7 @@ import com.cjp.planlab.services.IEmployeesService;
 public class EmployeesServiceImpl implements IEmployeesService{
 
 	
-	/*@Autowired
+	@Autowired
 	private EmployeesRepository employeesRepository;
 	
 	@Autowired
@@ -25,7 +26,7 @@ public class EmployeesServiceImpl implements IEmployeesService{
 	@Override
 	public List<EmployeesDto> findAllEmployees() {
 		return employeesMapper.transformToDto(employeesRepository.findAll());
-	}*/
+	}
 	
 	@Override
 	@Modifying
@@ -41,7 +42,6 @@ public class EmployeesServiceImpl implements IEmployeesService{
 
 	@Override
 	public EmployeesDto update(EmployeesDto employeesDto) throws IllegalArgumentException, ParseException {
-		// TODO Esbozo de método generado automáticamente
 		return employeesMapper.transformToDto(employeesRepository.save(employeesMapper.transformToPojo(employeesDto)));
 	}
 

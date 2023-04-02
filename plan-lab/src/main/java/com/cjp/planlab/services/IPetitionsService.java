@@ -11,5 +11,9 @@ public interface IPetitionsService {
 
 	PetitionsDto save(PetitionsDto petitionsDto) throws IllegalArgumentException, ParseException;
 
+	PetitionsDto update(PetitionsDto petitionDto) throws IllegalArgumentException, ParseException;
+
+	void delete(Long id);
+
 
 }

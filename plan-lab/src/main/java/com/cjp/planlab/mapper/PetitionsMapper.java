@@ -8,7 +8,9 @@ import java.util.Set;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
+import com.cjp.planlab.dtos.EmployeesDto;
 import com.cjp.planlab.dtos.PetitionsDto;
+import com.cjp.planlab.entities.Employees;
 import com.cjp.planlab.entities.Petitions;
 
 @Component
@@ -22,6 +24,19 @@ public class PetitionsMapper implements ModelMapper<Petitions, PetitionsDto>{
 			dto.setMessage(entity.getMessage());
 			dto.setReason(entity.getReason());
 			dto.setDays(entity.getDays());
+			
+			EmployeesDto employeeDto = null;
+			if(entity.getEmployee() !=null) {
+				employeeDto = new EmployeesDto();
+				employeeDto.setEmail(entity.getEmployee().getEmail());
+				employeeDto.setId(entity.getEmployee().getId());
+				employeeDto.setName(entity.getEmployee().getName());
+				employeeDto.setNif(entity.getEmployee().getNif());
+				employeeDto.setSurname(entity.getEmployee().getSurname());
+				employeeDto.setTelephone(entity.getEmployee().getTelephone());
+			}
+			
+			dto.setEmployee(employeeDto);
 		}
 		return dto;
 	}
@@ -34,6 +49,19 @@ public class PetitionsMapper implements ModelMapper<Petitions, PetitionsDto>{
 			entity.setMessage(dto.getMessage());
 			entity.setReason(dto.getReason());
 			entity.setDays(dto.getDays());
+			
+			Employees employee = null;
+			if(dto.getEmployee() !=null) {
+				employee = new Employees();
+				employee.setEmail(dto.getEmployee().getEmail());
+				employee.setId(dto.getEmployee().getId());
+				employee.setName(dto.getEmployee().getName());
+				employee.setNif(dto.getEmployee().getNif());
+				employee.setSurname(dto.getEmployee().getSurname());
+				employee.setTelephone(dto.getEmployee().getTelephone());
+			}
+			
+			entity.setEmployee(employee);
 		}
 		return entity;
 	}

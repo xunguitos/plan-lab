@@ -1,26 +1,31 @@
 package com.cjp.planlab.dtos;
 
+import java.util.ArrayList;
+import java.util.List;
 
+import com.cjp.planlab.entities.Petitions;
 
 public class EmployeesDto {
 
 	private Long id;
 	
-
 	private String name;
 	
-
 	private String surname;
 	
-
 	private String nif;
 	
-
 	private Long telephone;
 	
-
 	private String email;
+	
+	private List<PetitionsDto> petitions;
 
+	
+	public EmployeesDto(){
+		this.petitions = new ArrayList<PetitionsDto>();
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -68,6 +73,13 @@ public class EmployeesDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
+	public List<PetitionsDto> getPetitions() {
+		return petitions;
+	}
+
+	public void setPetitions(List<PetitionsDto> petitions) {
+		this.petitions = petitions;
+	}
 	
 }

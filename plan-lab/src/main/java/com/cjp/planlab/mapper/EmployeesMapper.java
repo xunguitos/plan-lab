@@ -25,6 +25,8 @@ public class EmployeesMapper implements ModelMapper<Employees, EmployeesDto>{
 			dto.setNif(entity.getNif());
 			dto.setEmail(entity.getEmail());
 			dto.setTelephone(entity.getTelephone());
+			
+			
 		}
 		return dto;
 	

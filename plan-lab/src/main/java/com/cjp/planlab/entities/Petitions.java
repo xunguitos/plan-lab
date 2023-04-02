@@ -1,12 +1,18 @@
 package com.cjp.planlab.entities;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,7 +31,12 @@ public class Petitions {
 	private String message;
 	
 	@Column(name = "days")
-	private List<String> days;
+	@ElementCollection
+	private List<Date> days;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_employees", nullable = false)
+	private Employees employee;
 
 	public Long getId() {
 		return id;
@@ -35,11 +46,11 @@ public class Petitions {
 		this.id = id;
 	}
 
-	public List<String> getDays() {
+	public List<Date> getDays() {
 		return days;
 	}
 
-	public void setDays(List<String> days) {
+	public void setDays(List<Date> days) {
 		this.days = days;
 	}
 
@@ -57,6 +68,14 @@ public class Petitions {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public Employees getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employees employee) {
+		this.employee = employee;
 	}
 
 }

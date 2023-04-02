@@ -25,10 +25,10 @@ public class EmployeesController {
 	@Autowired
 	private IEmployeesService employeesService;
 	
-	/*@GetMapping("/list")
+	@GetMapping("/list")
 	public ResponseEntity<List<EmployeesDto>> getAllEmployees(){
 		return ResponseEntity.ok().body(employeesService.findAllEmployees());
-	}*/
+	}
 	
 	@PostMapping("/create")
 	public ResponseEntity<EmployeesDto> createEmployees(@RequestBody EmployeesDto employeesDto)throws ParseException{

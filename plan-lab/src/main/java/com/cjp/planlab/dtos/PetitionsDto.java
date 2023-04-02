@@ -1,6 +1,9 @@
 package com.cjp.planlab.dtos;
 
+import java.util.Date;
 import java.util.List;
+
+import com.cjp.planlab.entities.Employees;
 
 public class PetitionsDto {
 	
@@ -10,7 +13,9 @@ public class PetitionsDto {
 	
 	private String message;
 	
-	private List<String> days;
+	private List<Date> days;
+	
+	private EmployeesDto employee;
 
 	public Long getId() {
 		return id;
@@ -36,14 +41,20 @@ public class PetitionsDto {
 		this.message = message;
 	}
 
-	public List<String> getDays() {
+	public List<Date> getDays() {
 		return days;
 	}
 
-	public void setDays(List<String> days) {
+	public void setDays(List<Date> days) {
 		this.days = days;
 	}
-	
-	
+
+	public EmployeesDto getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(EmployeesDto employee) {
+		this.employee = employee;
+	}
 
 }
