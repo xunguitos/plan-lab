@@ -6,6 +6,6 @@ import com.cjp.planlab.dtos.EmployeesDto;
 
 public interface IEmployeesService {
 
-	List<EmployeesDto> findAllEmployees();
+	//List<EmployeesDto> findAllEmployees();
 
 }

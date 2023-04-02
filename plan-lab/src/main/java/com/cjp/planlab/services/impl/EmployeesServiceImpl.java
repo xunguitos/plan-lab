@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cjp.planlab.dtos.EmployeesDto;
-import com.cjp.planlab.mapper.EmployeesMapper;
 import com.cjp.planlab.repository.EmployeesRepository;
 import com.cjp.planlab.services.IEmployeesService;
 
@@ -15,7 +14,7 @@ import com.cjp.planlab.services.IEmployeesService;
 public class EmployeesServiceImpl implements IEmployeesService{
 
 	
-	@Autowired
+	/*@Autowired
 	private EmployeesRepository employeesRepository;
 	
 	@Autowired
@@ -24,7 +23,7 @@ public class EmployeesServiceImpl implements IEmployeesService{
 	@Override
 	public List<EmployeesDto> findAllEmployees() {
 		return employeesMapper.transformToDto(employeesRepository.findAll());
-	}
+	}*/
 	
 	
 
