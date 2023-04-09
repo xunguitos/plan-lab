@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Page;
 
 import com.cjp.planlab.dtos.EmployeesDto;
@@ -15,6 +16,7 @@ import com.cjp.planlab.entities.Employees;
 import com.cjp.planlab.entities.Petitions;
 import com.cjp.planlab.entities.Shifts;
 
+@Configuration
 public class ShiftsMapper implements ModelMapper<Shifts, ShiftsDto>{
 
 	@Override
