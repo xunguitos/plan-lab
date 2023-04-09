@@ -41,8 +41,12 @@ public class Employees {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "employee")
 	private List<Petitions> petitions;
 	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "employee")
+	private List<Shifts> shifts;
+	
 	public Employees(){
 		this.petitions = new ArrayList<Petitions>();
+		this.shifts = new ArrayList<Shifts>();
 	}
 
 	public Long getId() {
@@ -100,5 +104,14 @@ public class Employees {
 	public void setPetitions(List<Petitions> petitions) {
 		this.petitions = petitions;
 	}
+
+	public List<Shifts> getShifts() {
+		return shifts;
+	}
+
+	public void setShifts(List<Shifts> shifts) {
+		this.shifts = shifts;
+	}
+	
 
 }

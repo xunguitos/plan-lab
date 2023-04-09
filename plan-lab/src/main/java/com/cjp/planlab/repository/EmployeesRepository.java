@@ -8,7 +8,5 @@ import com.cjp.planlab.entities.Employees;
 
 public interface EmployeesRepository extends JpaRepository<Employees, Long> {
 
-	public List<Employees> findAll();
-
 
 }

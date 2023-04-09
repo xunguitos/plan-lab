@@ -20,10 +20,13 @@ public class EmployeesDto {
 	private String email;
 	
 	private List<PetitionsDto> petitions;
+	
+	private List<ShiftsDto> shift;
 
 	
 	public EmployeesDto(){
 		this.petitions = new ArrayList<PetitionsDto>();
+		this.shift = new ArrayList<ShiftsDto>();
 	}
 	
 	public Long getId() {
