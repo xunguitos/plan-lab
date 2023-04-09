@@ -1,14 +1,14 @@
 package com.cjp.planlab.dtos;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class VacancesDto {
 
 	private Long id;
 	
-	private Date initDate;
+	private	String  initDate;
 	
-	private Date finishDate;
+	private String finishDate;
 	
 	private Long totalDays;
 
@@ -21,19 +21,19 @@ public class VacancesDto {
 		this.totalDays = totalDays;
 	}
 
-	public Date getFinishDate() {
+	public String getFinishDate() {
 		return finishDate;
 	}
 
-	public void setFinishDate(Date finishDate) {
+	public void setFinishDate(String finishDate) {
 		this.finishDate = finishDate;
 	}
 
-	public Date getInitDate() {
+	public String getInitDate() {
 		return initDate;
 	}
 
-	public void setInitDate(Date initDate) {
+	public void setInitDate(String initDate) {
 		this.initDate = initDate;
 	}
 
