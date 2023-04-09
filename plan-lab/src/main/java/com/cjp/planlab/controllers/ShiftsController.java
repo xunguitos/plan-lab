@@ -15,35 +15,35 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cjp.planlab.dtos.EmployeesDto;
-import com.cjp.planlab.dtos.PetitionsDto;
-import com.cjp.planlab.services.IPetitionsService;
+import com.cjp.planlab.dtos.ShiftsDto;
+import com.cjp.planlab.services.IShiftsService;
 
 @RestController
-@RequestMapping("/petitions")
-public class PetitionsController {
+@RequestMapping("/shifts")
+public class ShiftsController {
 	
 	@Autowired
-	private IPetitionsService petitionsService;
+	private IShiftsService shiftsService;
+	
 	
 	@GetMapping("/list")
-	public ResponseEntity<List<PetitionsDto>> getAllPetitions(){
-		return ResponseEntity.ok().body(petitionsService.findAllPetitions());
+	public ResponseEntity<List<ShiftsDto>> getAllShifts(){
+		return ResponseEntity.ok().body(shiftsService.findAllShifts());
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<PetitionsDto> createPetitions(@RequestBody PetitionsDto petitionDto) throws ParseException{
-		return ResponseEntity.status(HttpStatus.CREATED).body(petitionsService.save(petitionDto));
+	public ResponseEntity<ShiftsDto> createShift(@RequestBody ShiftsDto shiftsDto) throws ParseException{
+		return ResponseEntity.status(HttpStatus.CREATED).body(shiftsService.save(shiftsDto));
 	}
 	
 	@PutMapping("/update/{id}")
-	public ResponseEntity<PetitionsDto> updatePetition(@PathVariable(name="id") Long id, @RequestBody PetitionsDto petitionDto) throws ParseException{
-		return ResponseEntity.ok().body(petitionsService.update(petitionDto));
+	public ResponseEntity<ShiftsDto> updateShift(@PathVariable(name="id") Long id, @RequestBody ShiftsDto shiftsDto) throws ParseException{
+		return ResponseEntity.ok().body(shiftsService.update(shiftsDto));
 	}
 	
 	@DeleteMapping("/delete/{id}")
 	public void deleteShift(@PathVariable(name="id") Long id) throws IllegalArgumentException, ParseException {
-		petitionsService.delete(id);	
+		shiftsService.delete(id);	
 	}
 
 }
